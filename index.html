@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Area Calculate</title>
+    <link rel="stylesheet" href="stylel.css">
+</head>
+
+<body>
+    <div class="box">
+        <h1>Area Calculator</h1>
+        <div class="answerBox">
+            <span>Result:</span>
+            <span id="result"></span>
+            <button type="button" onclick="resultStorage()" id="store" class="btn btn-primary">Store</button>
+            <button type="button" onclick="clearData()" id="clear" class="btn btn-danger">Clear</button>
+            <div class="contBox">
+                <input type="number" id="width" name="" placeholder="width">
+                <label for="width"></label>
+                <input type="number" id="breadth" name="" placeholder="breadth">
+                <label for="breadth"></label>
+                <button type="button" id="calculate" onclick="calcArea()" class="btn btn-primary btn-sm">Calculate</button>
+            </div>
+            <div class="storage">
+                <ul id="theList"></ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        let width = document.getElementById("width");
+        let breadth = document.getElementById("breadth");
+        let result = document.getElementById("result");
+        let stored = document.getElementById("theList")
+
+        function calcArea() {
+            if (width.value == 0 || breadth.value == 0) {
+                alert("Empty width and breadth.")
+            } else {
+                let area = width.value * breadth.value;
+                result.innerHTML = `${width.value}ft x ${breadth.value}ft=${area}ft<sup>2</sup>`
+                width.value = "";
+                breadth.value = "";
+            }
+        }
+
+        function resultStorage() {
+            if (result.innerHTML == "") {
+                alert("result don't have");
+            } else {
+                theList.innerHTML += `<li>${result.innerHTML}</li>`;
+                clearData();
+            }
+        }
+
+        function clearData() {
+            result.innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>

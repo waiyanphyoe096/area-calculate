@@ -1,0 +1,41 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .box {
+        width: 500px;
+        height: 500px;
+        background-color: #facf5a;
+        margin: auto;
+        border-radius: 30px;
+    }
+    
+    h1 {
+        text-align: center;
+        color: #085f63;
+    }
+    
+    .answerBox {
+        text-align: center;
+        padding: 30px 0px;
+    }
+    
+    .answerBox span {
+        color: #1a2639;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    #result {
+        margin: 20px 40px;
+    }
+    
+    .contBox {
+        padding: 20px 0px;
+    }
+    
+    .storage {
+        color: rgb(0, 0, 0);
+    }
